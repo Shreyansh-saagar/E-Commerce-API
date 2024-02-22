@@ -1,0 +1,19 @@
+Product-Controller -> 
+           1. Add Product -> Done
+           2. Get Product -> Done
+           3. Get One Product -> Done
+           4. Filter Product -> Done
+           --------------------------------------
+           -> Need to secure API
+           5. Rate Product
+           6. Add item to cart
+           7. Remove item from cart
+           8. Get items of cart
+           -------------------------------------
+           9. Remove Product
+           10. Update Product
+
+User-Controller ->
+          1. Sign Up -> Email, name, password, TypeofUser (Seller or Customer)
+          2. Sign In -> Email , password
+          
