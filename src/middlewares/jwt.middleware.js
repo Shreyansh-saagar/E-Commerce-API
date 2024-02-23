@@ -13,7 +13,9 @@ const jwtAuth = (req,res,next)=>{
     // check valid or not
     try{
        const payload =  jwt.verify(token,"4mSvG1u36fdf4Z2uexZE8x8TblMF2k4A")
-       console.log(payload);
+       req.userId = payload.userId
+    //    console.log(payload);
+
     }catch(e){
         // else error
         return res.status(401).send('Unauthorized access')

@@ -32,6 +32,12 @@ let user = [
         password: "admin123",
         type:"seller",
         id: 1
+    },{
+        name:"shreyansh",
+        email:"shre@gmail.com",
+        password: "susanoo",
+        type:"customer",
+        id: 2
     },
 ]
 

@@ -21,4 +21,6 @@ router.get('/getFilterProduct',pc.getFilteredProduct)
 
 router.post("/",uploadFile.single('image'),validateRequest,pc.addProduct)
 
+router.post('/rate',pc.rateProduct)
+
 export default router;

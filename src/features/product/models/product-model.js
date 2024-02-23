@@ -1,3 +1,5 @@
+import um from "../../user/models/user.modal.js"
+
 export default class productModel {
   constructor(id, name, desc, image, category, price, sizes) {
     this.id = id;
@@ -35,6 +37,43 @@ export default class productModel {
     });
     return f1;
   }
+
+  static rateProduct(userID, productID, rating){
+    // validate user and Product exsistence
+    const user = um.getAll().find((u)=> u.id == userID)
+    if(!user){
+      return 'User not found'
+    }
+
+    const product = products.find((p)=> p.id == productID)
+    if(!product){
+      return 'Product not found'
+    }
+
+    // check if there are any ratings and if then add ratings into array
+    if(!product.ratings){
+      product.ratings = []
+      product.ratings.push({
+        userID:userID,rating:rating
+      })
+    }else{
+      // check if user rating is already available
+      const existingRatingIndex = product.ratings.findIndex((r)=> r.userID == userID)
+      if(existingRatingIndex >= 0){
+        product.ratings[existingRatingIndex] = {
+          userID:userID,rating:rating
+        }
+      }else{
+        // if no existing rating is available
+        product.ratings.push({
+          userID:userID,rating:rating
+        })
+      }
+    }
+
+  }
+
+
 }
 
 var products = [
