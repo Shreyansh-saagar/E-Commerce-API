@@ -10,6 +10,7 @@ const cc = new cartController()
 
 cartrouter.post('/',cc.add)
 cartrouter.get('/',cc.toGetCart)
+cartrouter.delete('/:id',cc.delete)
 
 
 export default cartrouter

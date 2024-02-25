@@ -6,14 +6,13 @@ Product-Controller ->
            --------------------------------------
            -> Need to secure API
            5. Rate Product -> Done
-           6. Add item to cart
-           7. Remove item from cart
-           8. Get items of cart
+           6. Add item to cart -> Done
+           7. Remove item from cart -> Done
+           8. Get items of cart -> Done
            -------------------------------------
            9. Remove Product
            10. Update Product
 
 User-Controller ->
           1. Sign Up -> Email, name, password, TypeofUser (Seller or Customer) -> Done
-          2. Sign In -> Email , password -> Done
-          
+          2. Sign In -> Email , password -> Done      

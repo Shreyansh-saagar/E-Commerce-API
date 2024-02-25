@@ -36,6 +36,15 @@ export default class cartModel{
         const items = cartItem.filter((i)=> i.userId == userId)
         return items
     }
+
+    static deleteItem(cartItemId, userId){
+        const cartItemIndex = cartItem.findIndex((i)=> i.id == cartItemId && i.userId == userId)
+        if(cartItemIndex == -1){
+            return 'Item not found'
+        }else{
+            cartItem.splice(cartItemIndex, 1)
+        }
+    }
 }
 
 let cartItem = [

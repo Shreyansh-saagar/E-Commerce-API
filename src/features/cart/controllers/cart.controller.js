@@ -16,4 +16,14 @@ export class cartController{
         const items = cm.filterCart(userId)
         return res.status(200).json(items)
     }
+
+    delete(req, res) {
+        const userId = req.userId
+        const cartItemId = req.params.id
+        const error = cm.deleteItem(cartItemId, userId)
+        if(error){
+            return res.status(404).send(error)
+        }
+        return res.status(200).send('cart item is removed')
+    }
 }

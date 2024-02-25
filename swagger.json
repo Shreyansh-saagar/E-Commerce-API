@@ -1,0 +1,75 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "version":"1.0.0",
+        "description":"A basic API for E-Commerce application.",
+        "title":"E-Commerce API"
+    },
+    "servers":[
+        {
+            "url":"http://localhost:5100"
+        }
+    ],
+    "components":{
+        "securitySchemes":{
+            "JWT":{
+                "in":"header",
+                "name":"Authorization",
+                "type":"apiKey"
+            }
+        }
+    },
+    "paths":{"/api/products/":{
+        "get":{
+            "tags":["Products"],
+            "summary":" To get products",
+            "description":"For listing all the products available for the user.",
+            "security":[
+                {
+                    "JWT":{}
+                }
+            ],
+            "responses":{
+                "200":{
+                    "description":"OK"
+                },
+                "401":{
+                    "description":"Unauthorized Access"
+                }
+            }
+        }
+    },
+    "/api/users/signin":{
+            "post":{
+                "tags":["Users"],
+                "summary":"For log in the user to apllication.",
+                "description":"User login to get token and access other features.",
+                "requestBody":{
+                        "content":{
+                            "application/json":{
+                                "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "email":{
+                                        "type":"string"
+                                    },
+                                    "password":{
+                                        "type":"string"
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                },
+                "responses":{
+                    "200":{
+                        "description":"OK"
+                    },
+                    "400":{
+                        "description":"Incorrect Credentials"
+                    }
+                }
+            }
+        }
+    }
+}
