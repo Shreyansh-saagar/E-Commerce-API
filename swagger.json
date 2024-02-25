@@ -19,24 +19,43 @@
             }
         }
     },
-    "paths":{"/api/products/":{
-        "get":{
-            "tags":["Products"],
-            "summary":" To get products",
-            "description":"For listing all the products available for the user.",
-            "security":[
-                {
-                    "JWT":{}
+    "paths":{
+    "/api/users/signup":{
+        "post":{
+            "tags":["Users"],
+            "summary":"To Register the user to apllication.",
+            "description":"User SignUp to register the user with application for future signIn and access other features.",
+            "requestBody":{
+                "content":{
+                    "application/json":{
+                        "schema":{
+                        "type":"object",
+                        "properties":{
+                            "name":{
+                                "type":"string"
+                            },
+                            "email":{
+                                "type":"string"
+                            },
+                            "password":{
+                                "type":"string"
+                            },
+                            "type":{
+                                "type":"string"
+                            }
+                        }
+                    }
                 }
-            ],
-            "responses":{
-                "200":{
-                    "description":"OK"
-                },
-                "401":{
-                    "description":"Unauthorized Access"
-                }
+            } 
+        },
+        "responses":{
+            "201":{
+                "description":"OK"
+            },
+            "400":{
+                "description":"Bad Request"
             }
+        }
         }
     },
     "/api/users/signin":{
@@ -70,6 +89,57 @@
                     }
                 }
             }
+    },
+    "/api/products/":{
+        "get":{
+            "tags":["Products"],
+            "summary":" To get products",
+            "description":"For listing all the products available for the user.",
+            "security":[
+                {
+                    "JWT":{}
+                }
+            ],
+            "responses":{
+                "200":{
+                    "description":"OK"
+                },
+                "401":{
+                    "description":"Unauthorized Access"
+                }
+            }
         }
+    },
+    "/api/products/{id}":{
+        "get":{
+            "tags":["Products"],
+            "summary":" To get one products",
+            "description":"For list one product on the basis of productId for the user.",
+            "security":[
+                {
+                    "JWT":{}
+                }
+            ],
+            "parameters": [
+                {
+                  "in": "path",
+                  "name": "id",
+                  "description": "Numeric ID of the product to retrieve",
+                  "schema":{
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+            ],
+            "responses":{
+                "200":{
+                    "description":"OK"
+                },"404":{
+                    "description":"Prodct not found"
+                }
+            }
+        }
+    }
+    
     }
 }
