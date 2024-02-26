@@ -12,6 +12,7 @@ import jwtAuth from './src/middlewares/jwt.middleware.js';
 import cartrouter from './src/features/cart/cart.routes.js';
 import apidocs from './swagger.json' assert {type:'json'}
 import cors from 'cors'
+import loggerMiddleware from './src/middlewares/logger.middleware.js';
 
 const PORT = '5100';
 const app = express();
@@ -45,9 +46,9 @@ app.use('/api-docs', swagger.serve, swagger.setup(apidocs))
 
 // -> API ROUTES
 
-app.use('/api/products', jwtAuth ,productRouter)
+app.use('/api/products', loggerMiddleware,jwtAuth ,productRouter)
 app.use('/api/users',userrouter)
-app.use('/api/cart', jwtAuth, cartrouter)
+app.use('/api/cart', loggerMiddleware,jwtAuth, cartrouter)
 
 
 app.get('/', (req, res) => {
