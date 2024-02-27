@@ -42,12 +42,14 @@ export default class productModel {
     // validate user and Product exsistence
     const user = um.getAll().find((u)=> u.id == userID)
     if(!user){
-      return 'User not found'
+      throw new Error('User not found')
     }
 
     const product = products.find((p)=> p.id == productID)
     if(!product){
-      return 'Product not found'
+
+      // user defined error
+      throw new Error('Product not found')
     }
 
     // check if there are any ratings and if then add ratings into array

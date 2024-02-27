@@ -32,6 +32,7 @@ const app = express();
 }) */
 
 
+
 // Handling CORS using library
 app.use(cors())
 
@@ -44,15 +45,22 @@ app.use(bodyParser.json())
 // -> API DOC ROUTE
 app.use('/api-docs', swagger.serve, swagger.setup(apidocs))
 
+
+
 // -> API ROUTES
 
 app.use('/api/products', loggerMiddleware,jwtAuth ,productRouter)
 app.use('/api/users',userrouter)
 app.use('/api/cart', loggerMiddleware,jwtAuth, cartrouter)
 
-
 app.get('/', (req, res) => {
     res.send("Welcome to E-com API")
+})
+
+// Handling application level errors
+app.use((err,req,res,next)=>{
+    console.log(err);
+    res.status(503).send('Something went wrong, please try again later')
 })
 
 // Middleware to handle all the requests which doesn't exist to handle 404

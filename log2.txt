@@ -1,0 +1,12 @@
+{"level":"info","message":"/ + {\"name\":\"Cotton tiger print\",\"desc\":\"Very beautiful fabric with tiger color print\",\"image\":\"https://www.bing.com/th?id=OIP.2kBM_Mmzf9spe-ZBLAbJhAHaJQ&w=150&h=188&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2\",\"category\":\"Shirt\",\"price\":599,\"sizes\":[\"S\",\"L\",\"XL\"]}","service":"request-logging","timestamp":"2024-02-27T05:59:46.349Z"}
+{"level":"info","message":"/ + {\"name\":\"Cotton tiger print\",\"desc\":\"Very beautiful fabric with tiger color print\",\"image\":\"https://www.bing.com/th?id=OIP.2kBM_Mmzf9spe-ZBLAbJhAHaJQ&w=150&h=188&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2\",\"category\":\"Shirt\",\"price\":599,\"sizes\":[\"S\",\"L\",\"XL\"]}","service":"request-logging","timestamp":"2024-02-27T06:01:04.005Z"}
+{"level":"info","message":"/ + {\"name\":\"Cotton tiger print\",\"desc\":\"Very beautiful fabric with tiger color print\",\"image\":\"https://www.bing.com/th?id=OIP.2kBM_Mmzf9spe-ZBLAbJhAHaJQ&w=150&h=188&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2\",\"category\":\"Shirt\",\"price\":599,\"sizes\":[\"S\",\"L\",\"XL\"]}","service":"request-logging","timestamp":"2024-02-27T06:01:58.428Z"}
+{"level":"info","message":"/ + {}","service":"request-logging","timestamp":"2024-02-27T06:02:29.552Z"}
+{"level":"info","message":"/rate?userID=2&productID=15&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T06:52:33.742Z"}
+{"level":"info","message":"/rate?userID=2&productID=15&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T06:53:06.164Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T06:53:19.459Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:08:13.838Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:09:38.706Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:10:42.995Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:11:04.021Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:12:03.016Z"}
