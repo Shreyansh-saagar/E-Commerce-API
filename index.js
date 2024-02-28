@@ -13,6 +13,7 @@ import cartrouter from './src/features/cart/cart.routes.js';
 import apidocs from './swagger.json' assert {type:'json'}
 import cors from 'cors'
 import loggerMiddleware from './src/middlewares/logger.middleware.js';
+import { applicationError } from './src/features/errors/applicationError.js';
 
 const PORT = '5100';
 const app = express();
@@ -60,7 +61,11 @@ app.get('/', (req, res) => {
 // Handling application level errors
 app.use((err,req,res,next)=>{
     console.log(err);
-    res.status(503).send('Something went wrong, please try again later')
+    if(err instanceof applicationError){
+        res.status(err.code).send(err.message)
+    }
+
+    res.status(500).send('Something went wrong, please try again later')
 })
 
 // Middleware to handle all the requests which doesn't exist to handle 404

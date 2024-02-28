@@ -1,3 +1,4 @@
+import { applicationError } from "../../errors/applicationError.js";
 import um from "../../user/models/user.modal.js"
 
 export default class productModel {
@@ -42,14 +43,14 @@ export default class productModel {
     // validate user and Product exsistence
     const user = um.getAll().find((u)=> u.id == userID)
     if(!user){
-      throw new Error('User not found')
+      throw new applicationError('User not found',400)
     }
 
     const product = products.find((p)=> p.id == productID)
     if(!product){
 
       // user defined error
-      throw new Error('Product not found')
+      throw new applicationError('Product not found',400)
     }
 
     // check if there are any ratings and if then add ratings into array

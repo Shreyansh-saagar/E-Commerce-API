@@ -10,3 +10,7 @@
 {"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:10:42.995Z"}
 {"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:11:04.021Z"}
 {"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T07:12:03.016Z"}
+{"level":"info","message":"/rate?userID=10&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T21:31:14.573Z"}
+{"level":"info","message":"/rate?userID=1&productID=1&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T21:31:50.290Z"}
+{"level":"info","message":"/rate?userID=1&productID=15&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T21:32:04.548Z"}
+{"level":"info","message":"/rate?userID=1&productID=15&rating=3.5 + {}","service":"request-logging","timestamp":"2024-02-27T21:32:52.498Z"}
