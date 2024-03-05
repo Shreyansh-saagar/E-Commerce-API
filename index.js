@@ -14,6 +14,7 @@ import apidocs from './swagger.json' assert {type:'json'}
 import cors from 'cors'
 import loggerMiddleware from './src/middlewares/logger.middleware.js';
 import { applicationError } from './src/features/errors/applicationError.js';
+import connectToMongoDB from './src/config/mongodb.js';
 
 const PORT = '5100';
 const app = express();
@@ -77,4 +78,5 @@ app.use((req,res)=>{
 
 app.listen(PORT,()=>{
     console.log(`App listening on port: ${PORT}`);
+    connectToMongoDB()
 })
