@@ -2,8 +2,8 @@ import { applicationError } from "../../errors/applicationError.js";
 import um from "../../user/models/user.modal.js"
 
 export default class productModel {
-  constructor(id, name, desc, image, category, price, sizes) {
-    this.id = id;
+  constructor(name, desc, image, category, price, sizes,id) {
+    this._id = id;
     this.name = name;
     this.desc = desc;
     this.image = image;
@@ -12,69 +12,69 @@ export default class productModel {
     this.sizes = sizes;
   }
 
-  static getProducts() {
-    return products;
-  }
+  // static getProducts() {
+  //   return products;
+  // }
 
-  static singleProduct(id) {
-    return products.find((p) => p.id == id);
-  }
+  // static singleProduct(id) {
+  //   return products.find((p) => p.id == id);
+  // }
 
-  static addProduct(product) {
-    const id = (products.id = products.length + 1);
-    product.id = id;
-    products.push(product);
-    return product;
-  }
+  // static addProduct(product) {
+  //   const id = (products.id = products.length + 1);
+  //   product.id = id;
+  //   products.push(product);
+  //   return product;
+  // }
 
-  static filter(minPrice, maxPrice, category, sizes) {
-    const f1 = products.filter((p) => {
-      return (
-        (!minPrice || p.price >= minPrice) &&
-        (!maxPrice || p.price <= maxPrice) &&
-        (!category || p.category == category) &&
-        (!sizes || sizes.some((size) => p.sizes.includes(size)))
-      );
-    });
-    return f1;
-  }
+  // static filter(minPrice, maxPrice, category, sizes) {
+  //   const f1 = products.filter((p) => {
+  //     return (
+  //       (!minPrice || p.price >= minPrice) &&
+  //       (!maxPrice || p.price <= maxPrice) &&
+  //       (!category || p.category == category) &&
+  //       (!sizes || sizes.some((size) => p.sizes.includes(size)))
+  //     );
+  //   });
+  //   return f1;
+  // }
 
-  static rateProduct(userID, productID, rating){
-    // validate user and Product exsistence
-    const user = um.getAll().find((u)=> u.id == userID)
-    if(!user){
-      throw new applicationError('User not found',400)
-    }
+  // static rateProduct(userID, productID, rating){
+  //   // validate user and Product exsistence
+  //   const user = um.getAll().find((u)=> u.id == userID)
+  //   if(!user){
+  //     throw new applicationError('User not found',400)
+  //   }
 
-    const product = products.find((p)=> p.id == productID)
-    if(!product){
+  //   const product = products.find((p)=> p.id == productID)
+  //   if(!product){
 
-      // user defined error
-      throw new applicationError('Product not found',400)
-    }
+  //     // user defined error
+  //     throw new applicationError('Product not found',400)
+  //   }
 
-    // check if there are any ratings and if then add ratings into array
-    if(!product.ratings){
-      product.ratings = []
-      product.ratings.push({
-        userID:userID,rating:rating
-      })
-    }else{
-      // check if user rating is already available
-      const existingRatingIndex = product.ratings.findIndex((r)=> r.userID == userID)
-      if(existingRatingIndex >= 0){
-        product.ratings[existingRatingIndex] = {
-          userID:userID,rating:rating
-        }
-      }else{
-        // if no existing rating is available
-        product.ratings.push({
-          userID:userID,rating:rating
-        })
-      }
-    }
+  //   // check if there are any ratings and if then add ratings into array
+  //   if(!product.ratings){
+  //     product.ratings = []
+  //     product.ratings.push({
+  //       userID:userID,rating:rating
+  //     })
+  //   }else{
+  //     // check if user rating is already available
+  //     const existingRatingIndex = product.ratings.findIndex((r)=> r.userID == userID)
+  //     if(existingRatingIndex >= 0){
+  //       product.ratings[existingRatingIndex] = {
+  //         userID:userID,rating:rating
+  //       }
+  //     }else{
+  //       // if no existing rating is available
+  //       product.ratings.push({
+  //         userID:userID,rating:rating
+  //       })
+  //     }
+  //   }
 
-  }
+  // }
 
 
 }
