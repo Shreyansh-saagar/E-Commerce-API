@@ -8,8 +8,13 @@ import userController from "./controllers/user.controller.js";
 const userrouter = express.Router();
 const uc = new userController()
 
-userrouter.post('/signup',uc.signUp)
-userrouter.post('/signin',uc.signIn)
+userrouter.post('/signup',(req,res)=>{
+    uc.signUp(req,res);
+})
+userrouter.post('/signin',(req,res)=>{
+    uc.signIn(req,res);
+})
+
 
 
 export default userrouter;

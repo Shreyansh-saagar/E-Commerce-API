@@ -1,14 +1,18 @@
 import {MongoClient} from 'mongodb'
 
 // connection string-> mongodb://localhost:27017/
-const url = "mongodb://localhost:27017/ecomDB"
+const url = process.env.DB_URL
 
-const connectToMongoDB =()=>{
-    MongoClient.connect(url).then(client=>{
+let client;
+export const connectToMongoDB =()=>{
+    MongoClient.connect(url).then(clientInstance=>{
+        client = clientInstance
         console.log('MongoDB connection established');
     }).catch(err=>{
         console.log(err);
     })
 }
 
-export default connectToMongoDB;
+export const getDB =()=>{
+    return client.db()
+}

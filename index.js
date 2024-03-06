@@ -1,8 +1,9 @@
+import './env.js'
+
 import swagger from 'swagger-ui-express'
 
 import express from 'express';
 import bodyParser from 'body-parser';
-
 
 
 import productRouter from './src/features/product/product-routes.js';
@@ -14,10 +15,11 @@ import apidocs from './swagger.json' assert {type:'json'}
 import cors from 'cors'
 import loggerMiddleware from './src/middlewares/logger.middleware.js';
 import { applicationError } from './src/features/errors/applicationError.js';
-import connectToMongoDB from './src/config/mongodb.js';
+import {connectToMongoDB} from './src/config/mongodb.js';
 
 const PORT = '5100';
 const app = express();
+
 
 
 // Handling CORS manually config -> * to allow eveything else to restrict you can specify it by seprating with ','
