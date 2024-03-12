@@ -23,7 +23,7 @@
     "/api/users/signup":{
         "post":{
             "tags":["Users"],
-            "summary":"To Register the user to apllication.",
+            "summary":"To Register the user to application.",
             "description":"User SignUp to register the user with application for future signIn and access other features.",
             "requestBody":{
                 "content":{
@@ -312,7 +312,7 @@
                     "in": "query",
                     "name": "productId",
                     "schema": {
-                        "type": "integer",
+                        "type": "string",
                         "description": "ID of the product to add to the cart."
                     },
                     "required": true

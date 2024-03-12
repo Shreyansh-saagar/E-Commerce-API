@@ -24,7 +24,7 @@ class userRepo{
             const database = getDB()
             // 2.> get collection
             const userCollection = database.collection('users')
-            // 3.> Add data
+            // find data
             return await userCollection.findOne({email})
         }catch(e){
             throw new applicationError("Something went wrong with authentication",500)

@@ -10,32 +10,33 @@ export default class cartModel{
         this.id = id;
     }
 
-    static add(productId,userId,quantity){
-        const user = um.getAll().find((u)=>u.id == userId);
-        if(!user){
-            return 'User not found'
-        }
+    // static add(productId,userId,quantity){
+    //     const user = um.getAll().find((u)=>u.id == userId);
+    //     if(!user){
+    //         return 'User not found'
+    //     }
 
-        const product = pm.getProducts().find((p)=>p.id == productId)
-        if(!product){
-            return 'Product not found'
-        }
+    //     const product = pm.getProducts().find((p)=>p.id == productId)
+    //     if(!product){
+    //         return 'Product not found'
+    //     }
 
-        if(quantity <= 0){
-            return 'Enter valid quantity of products'
-        }
+    //     if(quantity <= 0){
+    //         return 'Enter valid quantity of products'
+    //     }
 
 
-        const id =  cartItem.length + 1
-        const item = new cartModel(productId,userId,quantity,id)
-        cartItem.push(item)
-        return item
-    }
+    //     const id =  cartItem.length + 1
+    //     const item = new cartModel(productId,userId,quantity,id)
+    //     cartItem.push(item)
+    //     return item
+    // }
 
-    static filterCart(userId){
-        const items = cartItem.filter((i)=> i.userId == userId)
-        return items
-    }
+    
+    // static filterCart(userId){
+    //     const items = cartItem.filter((i)=> i.userId == userId)
+    //     return items
+    // }
 
     static deleteItem(cartItemId, userId){
         const cartItemIndex = cartItem.findIndex((i)=> i.id == cartItemId && i.userId == userId)

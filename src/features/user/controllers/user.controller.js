@@ -1,7 +1,6 @@
 import { applicationError } from "../../errors/applicationError.js"
 import userRepo from "../Repository/user.repository.js"
 import userModel from "../models/user.modal.js"
-import um from "../models/user.modal.js"
 import jwt from "jsonwebtoken"
 import bcrypt from 'bcrypt'
 
