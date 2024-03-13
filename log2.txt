@@ -102,3 +102,12 @@
 {"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=5 + {}","service":"request-logging","timestamp":"2024-03-12T12:56:33.796Z"}
 {"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=5 + {}","service":"request-logging","timestamp":"2024-03-12T12:56:57.726Z"}
 {"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=-2 + {}","service":"request-logging","timestamp":"2024-03-12T12:57:22.160Z"}
+{"level":"info","message":"/ + {}","service":"request-logging","timestamp":"2024-03-12T19:04:06.307Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T19:04:19.216Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T19:07:38.809Z"}
+{"level":"info","message":"/ + {}","service":"request-logging","timestamp":"2024-03-12T19:08:13.041Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T19:10:14.075Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T21:08:20.824Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T21:08:52.529Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T21:09:17.032Z"}
+{"level":"info","message":"/?productId=65e872dfc1396f39c3086811&quantity=2 + {}","service":"request-logging","timestamp":"2024-03-12T21:09:49.593Z"}
