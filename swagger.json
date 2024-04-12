@@ -150,9 +150,14 @@
                                 "sizes": {
                                     "type": "string",
                                     "description": "Comma-separated list of sizes"
+                                },
+                                "stock":{
+                                    "type": "number",
+                                    "format": "float",
+                                    "description": "Number of product stock"
                                 }
                             },
-                            "required": ["image", "name", "desc", "category", "price", "sizes"]
+                            "required": ["image", "name", "desc", "category", "price", "sizes", "stock"]
                         }
                     }
                 }
@@ -197,7 +202,7 @@
             }
         }
     },
-    "/api/products/getFilterProduct":{
+    "/api/products/filter":{
         "get":{
             "tags":["Products"],
             "summary": "To filter products",

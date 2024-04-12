@@ -14,6 +14,7 @@ export default class cartRepo{
             const database = getDB()
             const collection = database.collection(this.collection)
             const counterid = await this.getNextCounter(database)
+            
 
             await collection.updateOne(
                 { productId: new ObjectId(productId), userId: new ObjectId(userId) },

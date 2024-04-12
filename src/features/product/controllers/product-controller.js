@@ -12,7 +12,7 @@ export default class productController {
     console.log(req.body);
 
     try{
-      const { name, desc, category, price, sizes } = req.body;
+      const { name, desc, category, price, sizes,stock } = req.body;
       const newProduct = new productModel(
         name,
         desc,
@@ -20,6 +20,7 @@ export default class productController {
         category,
         parseFloat(price),
         sizes.split(","),
+        stock,
       );
 
       const result = await this.productRepo.add(newProduct);
@@ -88,5 +89,16 @@ export default class productController {
       next(error);
     }
 
+  }
+
+
+  async averagePrice(req,res,next){
+    try {
+      const result = await this.productRepo.averagePricePerCateg()
+      res.status(200).send(result);
+    } catch (error) {
+        console.log("Error at averagePrice controller");
+        throw new applicationError('Something went wrong',500)
+    }
   }
 }

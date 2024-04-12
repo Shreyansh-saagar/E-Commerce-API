@@ -20,6 +20,10 @@ router.get('/filter',(req,res)=>{
     pc.getFilteredProduct(req,res);
 })
 
+router.get("/average",(req,res)=>{
+    pc.averagePrice(req,res);
+})
+
 router.get('/:id',(req,res)=>{
     pc.getOneProduct(req,res);
 })

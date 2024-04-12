@@ -2,7 +2,7 @@ import { applicationError } from "../../errors/applicationError.js";
 import um from "../../user/models/user.modal.js"
 
 export default class productModel {
-  constructor(name, desc, image, category, price, sizes,id) {
+  constructor(name, desc, image, category, price, sizes,stock, id) {
     this._id = id;
     this.name = name;
     this.desc = desc;
@@ -10,6 +10,7 @@ export default class productModel {
     this.category = category;
     this.price = price;
     this.sizes = sizes;
+    this.stock = stock;
   }
 
   // static getProducts() {

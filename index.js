@@ -16,6 +16,7 @@ import cors from 'cors'
 import loggerMiddleware from './src/middlewares/logger.middleware.js';
 import { applicationError } from './src/features/errors/applicationError.js';
 import {connectToMongoDB} from './src/config/mongodb.js';
+import orderrouter from './src/features/order/order.routes.js';
 
 const PORT = '5100';
 const app = express();
@@ -56,6 +57,8 @@ app.use('/api-docs', swagger.serve, swagger.setup(apidocs))
 app.use('/api/products', loggerMiddleware,jwtAuth ,productRouter)
 app.use('/api/users',userrouter)
 app.use('/api/cart', loggerMiddleware,jwtAuth, cartrouter)
+app.use('/api/orders/',jwtAuth,orderrouter)
+
 
 app.get('/', (req, res) => {
     res.send("Welcome to E-com API")

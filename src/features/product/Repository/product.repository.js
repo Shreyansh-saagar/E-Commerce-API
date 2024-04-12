@@ -50,7 +50,7 @@ class productRepository{
             }if(category){
                 filterExpression.category = category
             }
-            return await collection.find(filterExpression).toArray() 
+            return await collection.find(filterExpression).project({name:1,price:1,_id:0,ratings:{$slice:1}}).toArray() 
             
         } catch (error) {
             throw new applicationError('Problem in filter product', 500)
@@ -90,6 +90,25 @@ class productRepository{
             }
         } catch (error) {
             console.log(error);
+            throw new applicationError('Problem in rating product', 500);
+        }
+    }
+
+    async averagePricePerCateg(){
+        try {
+            const db = getDB()
+            return await db.collection(this.collection).aggregate([
+                {
+                    // Stages: get average price per category
+                    $group:{
+                        _id:"$category",
+                        averagePrice:{$avg:"$price"}
+                    }
+                }
+            ]).toArray();
+
+        } catch (error) {
+            console.log("Error at average price repository : "+ error);
             throw new applicationError('Problem in rating product', 500);
         }
     }
